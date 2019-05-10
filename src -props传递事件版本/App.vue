@@ -1,9 +1,7 @@
 <template>
 <div class="todo-container">
     <div class="todo-wrap">
-        <!-- <TodoHeader @AddTodos='AddTodos'/> -->
-        <!-- 另一种方式 -->
-        <TodoHeader ref="header"/>
+        <TodoHeader :AddTodos='AddTodos'/>
         <TodoList :todos='todos' :deleteTodo='deleteTodo'/>
         <TodoFooter :todos='todos'  :selectAllTodo='selectAllTodo' :FclearAllComplete='FclearAllComplete'/>
     </div>
@@ -29,12 +27,6 @@ export default {
         TodoHeader,
         TodoList,
         TodoFooter
-    },
-    //声明周期函数
-    mounted() {//处理异步函数
-        this.$refs.header.$on('AddTodos',this.AddTodos);
-        //这种方式与@AddTodos=‘AddTodos’ 效果是一样的，不过这两种方法都是适用于父子组件传递。
-        //如果涉及到三层或更多，则还是需要使用函数绑定的方式逐层传递:AddTodos=‘AddTodos’
     },
     watch: {//监视
         todos:{

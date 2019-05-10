@@ -7,6 +7,7 @@
 export default {
   props:{
     todos:Array,
+    AddTodos:Function
   },
     data() {
       return {
@@ -19,8 +20,7 @@ export default {
          title:this.inputTitle,
          complete:false
        }
-      //this.AddTodos(todoItem)
-      this.$emit('AddTodos',todoItem)
+      this.AddTodos(todoItem)
       this.inputTitle =''
      } 
     }
