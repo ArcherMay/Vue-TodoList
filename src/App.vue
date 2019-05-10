@@ -5,7 +5,7 @@
         <!-- 另一种方式 -->
         <TodoHeader ref="header"/>
         <TodoList :todos='todos' :deleteTodo='deleteTodo'/>
-        <TodoFooter :todos='todos'  :selectAllTodo='selectAllTodo' :FclearAllComplete='FclearAllComplete'/>
+        <TodoFooter :todos='todos'  :selectAllTodo='selectAllTodo' @FclearAllComplete='FclearAllComplete'/>
     </div>
 </div>
 </template>

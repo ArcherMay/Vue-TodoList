@@ -13,7 +13,6 @@
 export default {
     props:{
       todos:Array,
-      FclearAllComplete:Function,
       selectAllTodo:Function
     },
     data() {
@@ -23,7 +22,7 @@ export default {
     methods: {
       clearAllComplete(){
         if(window.confirm(`确认删除吗`)){
-          this.FclearAllComplete()
+          this.$emit('FclearAllComplete');
         }
       }
     },
