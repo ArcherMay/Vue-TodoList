@@ -2,8 +2,8 @@
 <div>
       <li @mouseenter="handleEnter(true)" @mouseleave="handleEnter(false)" :style="{background:bgColor}">
           <label>
-            <input type="checkbox" v-model="todo.complete"/>
-            <span>{{todo.title}}</span>
+            <input type="checkbox" v-model="todo1.complete"/>
+            <span>{{todo1.title}}</span>
           </label>
           <button class="btn btn-danger" v-show="isShow" @click="deleteItem">删除</button>
         </li>
@@ -12,7 +12,7 @@
 <script>
 export default {
     props:{
-        todo:Object,
+        todo1:Object,
         index:Number,
         deleteTodo:Function
     },
